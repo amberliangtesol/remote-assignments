@@ -24,6 +24,7 @@ body {
 	}
 .title {
 	display: flex;
+	justify-content: center;
 	text-align: center;
 	height: 80px;
 	line-height: 80px;
@@ -80,22 +81,25 @@ body {
 				color: black;
 			}
 		.container {
-		width: 90%;
 		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
 		justify-content: center;
-		background-color: white;
-		margin: 0 auto;
 	}	
-		.item
-			{
-			max-width: 580px;
-			padding: 10px 0px 120px;
-			margin: 10px;	
-			text-align: center;
-			background-color: #8799A9;
+			.item-container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			background-color: white;
+			width: 1200px;
 			}
+			.item
+				{
+				width: 500px;
+				padding: 10px 0px 120px;
+				margin: 10px;	
+				text-align: center;
+				background-color: #8799A9;
+				}
 
 
 }
@@ -129,22 +133,26 @@ body {
 				color: black;
 			}
 		.container {
-		width: 95%;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-		background-color: white;
-		margin: 0 auto;
-	}	
-		.item
-			{
-			width: 40%;
-			padding: 10px 0px 120px;
-			margin: 10px;	
-			text-align: center;
-			background-color: #8799A9;
-			}
+			display: flex;
+			justify-content: center;
+		}
+			.item-container {
+			width: 95%;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			background-color: white;
+			margin: 0 auto;
+		}	
+				.item
+					{
+					width: 40%;
+					padding: 10px 0px 120px;
+					margin: 10px;	
+					text-align: center;
+					background-color: #8799A9;
+					}
 
 }
 	/* Request 2: Layout when screen width >= 800px and < 1200px---Total width of content boxes should scale automatically with screen width. */
@@ -189,6 +197,10 @@ body {
 			display: none;
 		}
 	.container {
+		display: flex;
+		justify-content: center;
+		}	
+		.item-container {
 			width: 95%;
 			display: flex;
 			flex-direction: row;
@@ -196,8 +208,8 @@ body {
 			justify-content: center;
 			background-color: white;
 			margin: 0 auto;
-		}	
-		.item {
+		}
+			.item {
 				width: 40%;
 				padding: 10px 0px 120px;
 				margin: 10px;	
@@ -248,17 +260,21 @@ body {
 		}
 	.container {
 			display: flex;
-			flex-direction: column;
-			flex-wrap: wrap;
-			background-color: white;
-			align-items: center;
+			justify-content: center;
 		}	
-		.item {
-			width: 85%;
-			padding: 10px 0px 120px;
-			margin: 10px;	
-			text-align: center;
-			background-color: #8799A9;
+			.item-container {
+				display: flex;
+				flex-direction: column;
+				flex-wrap: wrap;
+				background-color: white;
+				align-items: center;
 			}
+				.item {
+					width: 85%;
+					padding: 10px 0px 120px;
+					margin: 10px;	
+					text-align: center;
+					background-color: #8799A9;
+					}
 }
 	/* Request 4: Layout when screen width < 500px--- Content Boxes should change from 2-columns to 1-column layout. */
