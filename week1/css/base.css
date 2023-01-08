@@ -80,32 +80,28 @@ body {
 				color: black;
 			}
 		.container {
-		
-		/* width: 95%;
-		margin: 0 auto; */
+		width: 90%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		background-color: white;
+		margin: 0 auto;
 	}	
-		.item-container {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: center;
-			background-color: white;
-			width: 1200px
-		}
-			.item
-				{
-				width: 500px;
-				padding: 10px 0px 120px;
-				margin: 10px;	
-				text-align: center;
-				background-color: #8799A9;
-				}
+		.item
+			{
+			max-width: 580px;
+			padding: 10px 0px 120px;
+			margin: 10px;	
+			text-align: center;
+			background-color: #8799A9;
+			}
 
 
 }
 	/* Request 1: Layout when screen width >= 1200px---Total width of content boxes should be fixed in 1200px, even if the user's screen width is much larger than 1200px. */
 
-@media screen and (min-width:800px)and (max-width: 1199px){
+@media screen and (min-width:800px)and (max-width: 1200px){
 	.header {
 		width: 100%;
 		padding: 30px 60px;
