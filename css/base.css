@@ -1,0 +1,264 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Times New Roman';
+	width: 100%;
+}
+body {
+	font-size: 1.2em;
+	margin: 0; 
+	padding: 0;
+}
+.banner {
+	display: flex;
+	text-align: center;
+	height: 200px;
+	line-height: 200px;
+	padding: 0 auto;
+	color: black;
+	background: #CBDFEE;
+	white-space: nowrap;
+	
+}
+	.headline {
+		margin: 0;
+	}
+.title {
+	display: flex;
+	text-align: center;
+	height: 80px;
+	line-height: 80px;
+	padding: 0 auto;
+	color: black;
+	white-space: nowrap;
+}
+	h2 {
+		margin: 0;
+	}
+
+.button {
+	display: inline-block;
+	text-align: center;
+	margin-top: 30px;
+}
+	.button a {
+		width: 40px;
+		padding: 20px 30px;	
+		text-decoration: none;
+		color: black;
+		background: #CBDFEE;
+		white-space: nowrap;
+	}
+
+
+/* Media Queries  */
+
+@media screen and (min-width: 1200px){
+	.header {
+		width: 100%;
+		padding: 30px 60px;
+		display: flex;
+		justify-content: space-between;
+		background-color: #EDEDED;
+	}
+		.header a{
+			color: black;
+			text-decoration: none;
+			white-space: nowrap;
+		}
+		.hamburger-menu{
+			display: none;
+		}
+		.header nav {
+			width: 100%;
+			text-align: right;
+			white-space: nowrap;
+		}
+			.header nav a{
+				padding: 0 25px;
+				text-decoration: none;
+				list-style: none;
+				color: black;
+			}
+		.container {
+		width: 95%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		background-color: white;
+		margin: 0 auto;
+	}	
+		.item
+			{
+			width: 40%;
+			padding: 10px 0px 120px;
+			margin: 10px;	
+			text-align: center;
+			background-color: #8799A9;
+			}
+
+
+}
+	/* Request 1: Layout when screen width >= 1200px---Total width of content boxes should be fixed in 1200px, even if the user's screen width is much larger than 1200px. */
+
+@media screen and (min-width:800px)and (max-width: 1199px){
+	.header {
+		width: 100%;
+		padding: 30px 60px;
+		display: flex;
+		justify-content: space-between;
+		background-color: #EDEDED;
+	}
+		.header a{
+			color: black;
+			text-decoration: none;
+			white-space: nowrap;
+		}
+		.hamburger-menu{
+			display: none;
+		}
+		.header nav {
+			width: 100%;
+			text-align: right;
+			white-space: nowrap;
+		}
+			.header nav a{
+				padding: 0 25px;
+				text-decoration: none;
+				list-style: none;
+				color: black;
+			}
+		.container {
+		width: 95%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		background-color: white;
+		margin: 0 auto;
+	}	
+		.item
+			{
+			width: 40%;
+			padding: 10px 0px 120px;
+			margin: 10px;	
+			text-align: center;
+			background-color: #8799A9;
+			}
+
+}
+	/* Request 2: Layout when screen width >= 800px and < 1200px---Total width of content boxes should scale automatically with screen width. */
+
+@media screen and (min-width:500px)and (max-width: 799px){
+	.header {
+		padding: 20px 50px;
+		display: flex;
+		justify-content: space-between;
+		background-color: #EDEDED;
+		align-items: center
+	   }
+		.header a {
+		 color: black;
+		 text-decoration: none;
+		 white-space: nowrap;
+		}
+		.hamburger-menu {
+		height: 50px;
+		width: 50px;
+		padding: 1rem;
+		position: relative;
+		cursor: pointer;
+		background-color:#EDEDED;
+	}
+			.ham-bar {
+				width: 60%;
+				height: 2px;
+				background-color: black;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.bar-top {
+				top:25%;
+			}
+			.bar-bottom {
+				top:75%;
+			}
+		.header nav {
+			display: none;
+		}
+	.container {
+			width: 95%;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			background-color: white;
+			margin: 0 auto;
+		}	
+		.item {
+				width: 40%;
+				padding: 10px 0px 120px;
+				margin: 10px;	
+				text-align: center;
+				background-color: #8799A9;
+			}
+}
+	/* Request 3: Layout when screen width >= 500px and < 800px--- Menu Items in the navigator should be replaced by a menu trigger icon. */
+
+@media screen and (max-width: 500px){
+	.header {
+		padding: 20px 50px;
+		display: flex;
+		justify-content: space-between;
+		background-color: #EDEDED;
+		align-items: center
+	   }
+		.header a{
+		 color: black;
+		 text-decoration: none;
+		 white-space: nowrap;
+		}
+		.hamburger-menu {
+			height: 50px;
+			width: 50px;
+			padding: 1rem;
+			position: relative;
+			cursor: pointer;
+			background-color:#EDEDED;
+		}
+			.ham-bar {
+				width: 60%;
+				height: 2px;
+				background-color: black;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.bar-top {
+				top:25%;
+			}
+			.bar-bottom {
+				top:75%;
+			}
+		.header nav {
+			display: none;
+		}
+	.container {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			background-color: white;
+			align-items: center;
+		}	
+		.item {
+			width: 85%;
+			padding: 10px 0px 120px;
+			margin: 10px;	
+			text-align: center;
+			background-color: #8799A9;
+			}
+}
+	/* Request 4: Layout when screen width < 500px--- Content Boxes should change from 2-columns to 1-column layout. */
