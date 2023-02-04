@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>week4-Assignment 2: HTML DOM and AJAX</h3>
+  <div id="result"></div>
+
+  <script>
+    function ajax(url) {
+      return fetch(url).then(response => response.json());
+    }
+
+    function render(data) {
+      let result=document.querySelector("#result"); 
+          for(let i=0; i<data.length; i++){
+            let product=data[i];
+            result.innerHTML+="<div>"+"【"+product.name+"】$"+product.price.toLocaleString()+" - "+product.description+"</div>";
+          }  
+    }
+
+    const url = "https://appworks-school.github.io/Remote-Assignment-Data/products";
+    
+    ajax(url).then((data) => { 
+      render(data);
+    });
+  </script>
+
+</body>
+</html>
+
+
+
