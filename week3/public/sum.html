@@ -5,36 +5,32 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Array Calculator</title>
         <script>
-        function sendAJAX () { 
-          var xhr = new XMLHttpRequest(); 
+        var xhr = new XMLHttpRequest();   
+        xhr.onreadystatechange = function () {
+          console.log({ xhr })
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            document.getElementById('ajax').innerHTML = xhr.responseText;
+          } else {
+            alert(xhr.statusText);
+            }   
+          }
+        };
 
-          xhr.open('GET', 'sum.html');
-          
-          xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-              if (xhr.status === 200) {
-               
-                console.log('===')
-                const input = document.getElementById("number").value;
-                document.getElementById('ajax').innerHTML = (((1 + Number(input)) * Number(input))/2);
-              } else {
-                alert(xhr.statusText);
-              }   
-            }
-          }; 
-
-          xhr.send();         
+        function getData (number) {
+          var req = new XMLHttpRequest();
+          req.open("get", "http://localhost:3000/getData?number=10");
+          req.onload=function(){
+            var content=document.getElementById("ajax");
+            content.innerHTML=this.responseText;
+          };
+          req.send();
         }         
 
         function clearResult () {  
           document.getElementById("number").value= '';
           document.getElementById("ajax").value= '';
         }   
-
-        function calculate(input) {
-          const dataFromBrowser = input;
-          console.log((((1 + Number(dataFromBrowser)) * Number(dataFromBrowser))/2));
-        }
         </script>
 	</head>
 	<body>
@@ -44,7 +40,7 @@
 				<div>
 					<label>Your number</label>
 					<input  id="number" type="number" placeholder="請輸入數字" />
-					<button id="load"  type="submit" onclick="sendAJAX()">Submit</button>
+					<button id="load" type="submit" onclick="getData();">Submit</button>
           <button id="reset" type="reset" value ="Reset" onClick="clearResult()">Reset</button>
 				  </div>
           <div>
@@ -53,8 +49,6 @@
 				</div>
 			</header>
 		</div>
-		<script src="app.js"></script>
-    <script src="index.js"></script>
 
 	</body>
 </html>
