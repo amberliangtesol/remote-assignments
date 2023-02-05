@@ -10,18 +10,20 @@
           console.log({ xhr })
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
-            document.getElementById('ajax').innerHTML = xhr.responseText;
+            document.getElementById("content").innerHTML = xhr.responseText;
           } else {
             alert(xhr.statusText);
             }   
           }
         };
 
-        function getData (number) {
+        function getData () {
+          var inputNumber = document.getElementById("number"); 
+          var number = inputNumber.value; 
           var req = new XMLHttpRequest();
-          req.open("get", "http://localhost:3000/getData?number=10");
+          req.open("get", `http://localhost:3000/getData?number=${number}`);
           req.onload=function(){
-            var content=document.getElementById("ajax");
+            var content=document.getElementById("content");
             content.innerHTML=this.responseText;
           };
           req.send();
@@ -29,7 +31,7 @@
 
         function clearResult () {  
           document.getElementById("number").value= '';
-          document.getElementById("ajax").value= '';
+          document.getElementById("content").value= '';
         }   
         </script>
 	</head>
@@ -39,13 +41,13 @@
 				<h1>Array Calculator</h1>
 				<div>
 					<label>Your number</label>
-					<input  id="number" type="number" placeholder="請輸入數字" />
-					<button id="load" type="submit" onclick="getData();">Submit</button>
+					<input  id="number" type="number" placeholder="請輸入數字"/>
+					<button id="load" type="submit" onclick="getData(number);">Submit</button>
           <button id="reset" type="reset" value ="Reset" onClick="clearResult()">Reset</button>
 				  </div>
           <div>
 					<label>Result:</label>
-					<output id="ajax" type="number"/>
+					<output id="content"/>
 				</div>
 			</header>
 		</div>
