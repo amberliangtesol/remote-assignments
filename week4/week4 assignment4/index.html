@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <div id="result"></div>
+
+  <script>
+    function ajax(url) {
+      return fetch(url).then(response => response.json());
+    }
+
+    function button(data){
+      const button = document.querySelector('.button');
+      button.addEventListener('click', () => {
+        let result=document.querySelector("#result"); 
+          render(data);
+      });
+    }
+
+    function render(data) {
+      let result=document.querySelector("#result"); 
+          for(let i=0; i<5; i++){
+            let product=data[i];
+            const topicArray= product.topics; 
+            const topics = topicArray.map((item) => `<div class="topics">${item}</div>`).join("");
+            result.innerHTML+=`
+            <div class="border">
+              <div class="line1">
+                <div class="name">${product.name}</div>
+                <div class="visibility">${product.visibility}</div>
+              </div>
+              <div class="description">${product.description}</div>
+              ${topics}
+            </div>`;
+          } 
+    }
+
+
+    const url = "https://api.github.com/orgs/facebook/repos?per_page=5&page=1";
+    
+    ajax(url).then((data) => { 
+      render(data)
+      button(data);
+    });
+
+  </script>
+    <button class="button"> More </button>
+  
+</body>
+</html>
+
+
+
